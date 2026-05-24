@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anhanguera Solutions - Sistema Central</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topo">
+    <div>
+      <h1>Anhanguera Solutions</h1>
+      <p>Sistema Central de Agentes</p>
+    </div>
+    <span id="statusApi" class="badge">API nao conectada</span>
+  </header>
+
+  <main class="layout">
+    <section class="painel login">
+      <h2>Controle de Seguranca</h2>
+      <form id="formLogin">
+        <label>
+          Usuario
+          <input id="usuario" type="text" placeholder="admin">
+        </label>
+        <label>
+          Senha
+          <input id="senha" type="password" placeholder="789">
+        </label>
+        <button type="submit">Validar acesso</button>
+      </form>
+      <p id="mensagemLogin" class="mensagem"></p>
+    </section>
+
+    <section class="painel">
+      <h2>Cadastro de Agentes</h2>
+      <form id="formAgente" class="grid-form">
+        <input id="nome" type="text" placeholder="Nome do agente" required>
+        <input id="setor" type="text" placeholder="Setor" required>
+        <select id="nivel" required>
+          <option value="">Nivel de acesso</option>
+          <option value="basico">Basico</option>
+          <option value="operacional">Operacional</option>
+          <option value="administrativo">Administrativo</option>
+          <option value="master">Master</option>
+        </select>
+        <select id="status" required>
+          <option value="ativo">Ativo</option>
+          <option value="em analise">Em analise</option>
+          <option value="bloqueado">Bloqueado</option>
+        </select>
+        <button type="submit" id="btnSalvar">Cadastrar agente</button>
+      </form>
+    </section>
+
+    <section class="painel tabela-area">
+      <h2>Banco Temporario de Agentes</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Setor</th>
+            <th>Nivel</th>
+            <th>Status</th>
+            <th>Acoes</th>
+          </tr>
+        </thead>
+        <tbody id="tabelaAgentes"></tbody>
+      </table>
+    </section>
+
+    <section class="painel">
+      <h2>Comunicacao do Nucleo</h2>
+      <form id="formMensagem" class="grid-form">
+        <input id="remetente" type="text" placeholder="Remetente" required>
+        <input id="destinatario" type="text" placeholder="Destinatario" required>
+        <select id="prioridade" required>
+          <option value="normal">Normal</option>
+          <option value="alta">Alta</option>
+          <option value="critica">Critica</option>
+        </select>
+        <select id="statusMensagem" required>
+          <option value="aberta">Aberta</option>
+          <option value="em andamento">Em andamento</option>
+          <option value="resolvida">Resolvida</option>
+        </select>
+        <textarea id="textoMensagem" placeholder="Mensagem" required></textarea>
+        <button type="submit">Enviar mensagem</button>
+      </form>
+      <div id="listaMensagens" class="lista"></div>
+    </section>
+
+    <section class="painel inteligencia">
+      <h2>Central de Inteligencia</h2>
+      <div class="metricas">
+        <div>
+          <strong id="totalAgentes">0</strong>
+          <span>Total de agentes</span>
+        </div>
+        <div>
+          <strong id="ativos">0</strong>
+          <span>Agentes ativos</span>
+        </div>
+        <div>
+          <strong id="criticas">0</strong>
+          <span>Mensagens criticas</span>
+        </div>
+      </div>
+      <button id="btnJson">Gerar JSON</button>
+      <pre id="saidaJson"></pre>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

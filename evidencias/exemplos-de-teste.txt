@@ -1,0 +1,58 @@
+EVIDENCIAS DE TESTE
+
+1. Login
+Entrada:
+usuario: admin
+senha: 789
+
+Saida esperada:
+Acesso liberado. Permissao: Master
+
+2. Cadastro de agente
+Entrada:
+nome: Ana Souza
+setor: Seguranca
+nivel: master
+status: ativo
+
+Saida esperada:
+Agente cadastrado e exibido na tabela.
+
+3. Listagem de agentes
+Acao:
+Abrir a tela inicial ou clicar para carregar os dados.
+
+Saida esperada:
+A lista de agentes cadastrados aparece na tela.
+
+4. Atualizacao de agente
+Acao:
+Clicar em editar, alterar setor ou status e salvar.
+
+Saida esperada:
+Agente atualizado na API e na tela.
+
+5. Remocao de agente
+Acao:
+Clicar em remover.
+
+Saida esperada:
+Agente removido da lista.
+
+6. Mensagens internas
+Entrada:
+remetente: Seguranca
+destinatario: Infraestrutura
+prioridade: critica
+status: aberta
+mensagem: Tentativa de invasao detectada.
+
+Saida esperada:
+Mensagem registrada e exibida na area de comunicacao.
+
+7. Central de inteligencia
+Acao:
+Gerar estatisticas.
+
+Saida esperada:
+Quantidade total de agentes, agentes ativos e dados em JSON.
