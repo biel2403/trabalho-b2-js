@@ -3,8 +3,7 @@
 ## Reconstrucao do Sistema Central
 
 **Empresa:** Anhanguera Solutions  
-**Tema:** Reconstrucao dos modulos internos usando JavaScript  
-**Nivel:** 3o semestre de ADS
+**Tema:** Reconstrucao dos modulos internos usando JavaScript 
 
 ## Objetivo
 
